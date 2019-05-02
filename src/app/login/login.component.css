@@ -1,0 +1,46 @@
+.container{
+    position: absolute;
+    margin: 0 auto;
+    left:50%;
+    transform: translate(-50%);
+    top:20vh;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+}
+
+.lable{
+    margin-top: 15px;
+    margin-right: 20px;
+}
+
+.input{
+    border: 1px solid black;
+    height: 25px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-success{
+    margin-top: 10px;
+    background-color: green;
+    border:1px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+}
+
+.btn-sign{
+    margin-top: 10px;
+    background-color: rebeccapurple;
+    border:1px solid black;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+}
+
+.checkbox{
+    margin-top:10px;
+}
