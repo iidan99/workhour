@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HttpService } from '../http.service';
 import { Subscriber } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { Subscriber } from 'rxjs';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private httpService: HttpService) { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit() {
     
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit(){
-    this.httpService.getUsers(this.loginForm.value.user, this.loginForm.value.password);
+  this.auth.login(this.loginForm.value.user, this.loginForm.value.password);
   }
 
   signIn(){
