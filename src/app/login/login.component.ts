@@ -16,17 +16,18 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     
     // console.log(this.loginData.checkLogin());
-    this.httpService.getUsers('idan', '1234').subscribe(
-      (response) => console.log(response));
+    // this.httpService.getUsers('idan', '1234').subscribe(
+    //   (response) => console.log(response));
     this.loginForm = new FormGroup({
       user: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
     });
   }
-
+  
   onSubmit(){
-
+    this.httpService.getUsers(this.loginForm.value.user, this.loginForm.value.password);
   }
+
   signIn(){
     
   }

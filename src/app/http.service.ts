@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +8,34 @@ import { HttpClient } from '@angular/common/http';
 
 export class HttpService {
 
-  private readonly dBUrl: string = 'https://workhour-5c1b5.firebaseio.com/users.json';
+  users: User[] = [];
 
-  constructor(private httpClient: HttpClient) { }
-
-  getUsers(username: string, password: string): Observable<any> {
-    const userObj = {
-      username,
-      password
-    };
-    return this.httpClient.get(this.dBUrl);
+  constructor(private db: AngularFireDatabase) {
   }
+
+
+  getUsers(user: string, password: string) {
+    var x = this.db.list("users");
+    // console.log(this.db.list(`users/2`));
+    x.snapshotChanges().subscribe(item => {
+      item.forEach(element => {
+        var y = element.payload.toJSON();
+        // y["$key"] = element.key;
+        this.users.push(y as User);
+        console.log(this.users);
+      })
+    })
+    if (this.users.find(x => x.user === user && x.password === password)) {
+      console.log('hum');
+    }
+    else{
+      console.log('password or User name is incorrect');
+    }
+  }
+}
+
+interface User {
+  user: string;
+  password: string;
+  state: string;
 }

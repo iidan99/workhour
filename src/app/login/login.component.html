@@ -1,5 +1,5 @@
 <div class="container">
-  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+  <form (ngSubmit)="onSubmit(ngForm)" [formGroup]="loginForm">
     <div class="row">
       <label class="lable" for="">User-Name:</label>
       <input class="input" formControlName="user" type="text">
