@@ -3,20 +3,21 @@
     margin: 0 auto;
     left:50%;
     transform: translate(-50%);
-    top:20vh;
+    top:15vh;
 }
 
 .row{
     display: flex;
+    width: 200px;
     flex-direction: column;
 }
 
 .lable{
-    margin-top: 15px;
     margin-right: 20px;
 }
 
 .input{
+    margin-bottom: 15px;
     border: 1px solid black;
     height: 25px;
     padding: 10px;
@@ -24,23 +25,47 @@
 }
 
 .btn-success{
-    margin-top: 10px;
-    background-color: green;
-    border:1px solid black;
     border-radius: 5px;
-    font-size: 18px;
-    color: white;
+    background-color: rgb(130, 181, 226);
+    border: 1px solid black;
+    height: 25px;
+    font-size: 15px;
+    width: 80px;
+    transition-duration: 0.4s;
 }
 
 .btn-sign{
-    margin-top: 10px;
-    background-color: rebeccapurple;
-    border:1px solid black;
     border-radius: 5px;
-    font-size: 18px;
-    color: white;
+    background-color: rgb(226, 130, 130);
+    border: 1px solid black;
+    height: 25px;
+    font-size: 15px;
+    width: 80px;
+    transition-duration: 0.4s;
 }
 
-.checkbox{
-    margin-top:10px;
+.btn{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.login_lable{
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.line{
+    margin-bottom: 25px;
+    border-top:1px solid rgba(160, 160, 160, 0.5);
+}
+
+.btn-sign:hover, .btn-success:hover{
+    background-color: rgb(254, 255, 255);
+}
+
+.input.ng-invalid.ng-touched{
+    border: 1px solid red;
 }

@@ -1,14 +1,17 @@
 <div class="container">
-  <form (ngSubmit)="onSubmit(ngForm)" [formGroup]="loginForm">
+  <p class="login_lable">Login</p>
+  <hr class="line">
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
     <div class="row">
       <label class="lable" for="">User-Name:</label>
       <input class="input" formControlName="user" type="text">
-
       <label class="lable" for="">Password:</label>
-      <input class="input" formControlName="password"  type="password">
+      <input class="input" formControlName="password" type="password">
       <span class="checkbox"><input type="checkbox" value="remember"> Remember Me</span>
-      <button class="btn-success" type="submit">Log-in</button>
-      <button class="btn-sign" (click)="signIn()" >Sign-in</button>
+      <div class="btn">
+        <button class="btn-success" type="submit">Log-in</button>
+        <button class="btn-sign" (click)="signIn()">Sign-in</button>
+      </div>
     </div>
   </form>
 </div>

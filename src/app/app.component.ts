@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 
@@ -9,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'workhour';
-
+  @Input() signin: boolean;
   constructor() {
   }
   ngOnInit() {
 
   }
-
+  SigninShow(value: boolean) {
+    this.signin = value;
+  }
 }
 

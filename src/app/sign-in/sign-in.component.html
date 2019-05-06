@@ -1,15 +1,17 @@
 <div class="container">
+  <p class="sign_lable"> Sign in</p>
+  <hr class="line">
   <div class="row">
-    <form (ngSubmit)="onSubmit(ngForm)" [formGroup]="signForm">
-      <label for="">Email</label>
-      <input type="email">
-      <label for="">Password</label>
-      <input type="password">
-      <label for="">Repeat Password</label>
-      <input type="password">
+    <form (ngSubmit)="onSubmit()" [formGroup]="signForm">
+      <label>Email</label>
+      <input class="input" formControlName="email" type="email">
+      <label>Password</label>
+      <input class="input" formControlName="password" type="password">
+      <label>Repeat Password</label>
+      <input class="input" formControlName="repPassword" type="password">
       <div class="btn">
         <button class="btn_sign" type="submit">Submit</button>
-        <button class="btn_cancel">cancel</button>
+        <button class="btn_cancel" (click)="onCancel()">cancel</button>
       </div>
     </form>
   </div>
