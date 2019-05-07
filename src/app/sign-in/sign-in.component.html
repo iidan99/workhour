@@ -3,11 +3,11 @@
   <hr class="line">
   <div class="row">
     <form (ngSubmit)="onSubmit()" [formGroup]="signForm">
-      <label>Email</label>
+      <label>Email:</label>
       <input class="input" formControlName="email" type="email">
-      <label>Password</label>
+      <label>Password:</label>
       <input class="input" formControlName="password" type="password">
-      <label>Repeat Password</label>
+      <label>Repeat Password:</label>
       <input class="input" formControlName="repPassword" type="password">
       <div class="btn">
         <button class="btn_sign" type="submit">Submit</button>
