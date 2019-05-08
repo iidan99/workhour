@@ -1,9 +1,18 @@
 .Work_clock{
-
+height: 218px;
+position: relative;
+top: 100px;
 }
 
 .circal_img{
     display: block;
-    height: 400px;
-    margin: 15vh auto;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.timer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
