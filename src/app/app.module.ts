@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service';
 import { SignInComponent } from './sign-in/sign-in.component';
@@ -27,7 +27,8 @@ import { MainViewComponent } from './main-view/main-view.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFirestore
+    AngularFireDatabaseModule,
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

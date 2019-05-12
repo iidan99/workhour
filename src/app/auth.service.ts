@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
   info: {};
-items: Observable<any[]>;
-  constructor(private firebaseAuth: AngularFireAuth, db: AngularFirestore) {
+  data: Observable<AngularFireDatabase>;
+  constructor(private firebaseAuth: AngularFireAuth, private db: AngularFireDatabase) {
     this.user = firebaseAuth.authState;
-    this.items = db.collection('items').valueChanges();
   }
 
   login(email: string, password: string) {
@@ -25,6 +24,7 @@ items: Observable<any[]>;
       })
       .catch(err => {
         console.log('Something went wrong:',err.message);
+     this.db.database.ref(`/user`);
       });
   }
 
@@ -34,7 +34,6 @@ items: Observable<any[]>;
       .createUserWithEmailAndPassword(email, password)
       .then(value => {
         this.info = value.user.uid;
-        this.items.subscribe(a => a.push(value.user));
         console.log('Success!', value);
 
       })
